@@ -375,5 +375,16 @@
 //         console.log(error);
 //     }
 // }
-
 // fetchData();
+
+// // Fetch Api
+// let a = fetch('https://jsonplaceholder.typicode.com/todos');
+// a.then((value1) => {
+//     return value1.json();
+// })
+// .then((value2) => {
+//     console.log(value2);
+// })
+// .catch((error) => {
+//     console.error('Error:', error);
+// });
