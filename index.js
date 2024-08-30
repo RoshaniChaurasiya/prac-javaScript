@@ -1,13 +1,28 @@
 // //Find Duplicates
 // const arrNum = [1, 2, 8, 2, 9, 8];
 // const dup = arrNum.filter((ele, i, arr) => arr.indexOf(ele) !== i);
-// console.log(dup);
+// console.log(dup);    
 
 // let arr = [1, 2, 4, 5, 3, 6, 3, 2, 5];
 // let arr2 = [1, 4, 3, 2, 6, 88, 9, 3];
 // let arrUni = [...arr, ...arr2];
 // let uni = [...new Set(arrUni)];
 // console.log(uni);
+
+// let arrr = [1, 3, 2, 4, 2, 43, 5, 4, 36, 5];
+// function remDup(arr) {
+//     let uniEl = [];
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (uniEl.indexOf(arr[i]) === -1){
+//             uniEl.push(arr[i]);
+//         }
+//     }
+//     return uniEl;
+// }
+// console.log(remDup(arrr).sort((a,b)=>a-b))
+// // let uniEl = [...new Set(arrr)];
+// // console.log(uniEl);
 
 // let arrNum = [1, 2, 4, 5, 32, 63, 3, 2, 53];
 // let newArr = arrNum.map((e) => e * 2);
@@ -36,6 +51,19 @@
 // };
 // console.log(maxVal(arrNum));
 
+// let num = [2, 3, 4, 11, 55, 32, 22, 10, 62];
+// function secLar(arr) {
+//   arr.sort((a, b) => a - b).pop();
+//   return Math.max(...arr);
+// }
+// console.log(secLar(num));
+
+// function maxVal(Nnum){
+//     Nnum.sort((a,b)=>b-a);
+//     return Nnum[0]
+// }
+// console.log(maxVal(Nnum))
+
 // let arr = [1, 2, 4, 5, 3, 6, 3, 2, 5];
 // console.log(arr.push(55));
 // console.log(arr);
@@ -52,40 +80,24 @@
 //   }
 // }
 
-// let sttt = "Roshani Soni Sangam";
 // function reverseStr(str) {
 //   let rever = "";
 
-//   for (let i = str.length - 1; i >= 0; i--) {
+//   for (let i = str.length-1; i >= 0; i--) {
 //     rever += str[i];
 //   }
 //   return rever;
 
-//   // return str.split("").reverse().join("");
+// //   return str.split("").reverse().join("");
 // }
-// console.log(reverseStr(sttt));
+// console.log(reverseStr("roshani"));
 
 // function palindrome(str) {
 //   str = str.toLowerCase().replace(/\W/g, "");
 //   let revStr = str.split("").reverse().join("");
-//   return str === revStr ? true : false;
+//   return str === revStr;
 // }
-// console.log(palindrome("man am"));
-
-// let arrr = [1, 3, 2, 4, 2, 43, 5, 4, 36, 5];
-// // function remDup(arr) {
-// //     let uniEl = [];
-
-// //     for (let i = 0; i < arr.length; i++) {
-// //         if (uniEl.indexOf(arr[i]) === -1){
-// //             uniEl.push(arr[i]);
-// //         }
-// //     }
-// //     return uniEl;
-// // }
-// // console.log(remDup(arrr).sort((a,b)=>a-b))
-// let uniEl = [...new Set(arrr)];
-// console.log(uniEl);
+// console.log(palindrome("manam"));
 
 // function anagrams(str1, str2) {
 //   str1 = str1.split("").sort().join("");
@@ -103,7 +115,7 @@
 //   }
 //   return true;
 // }
-// console.log(prime(4));
+// console.log(prime(13));
 
 // function rmSpace(str) {
 //   result = str.replace(/\s/g, "");
@@ -191,13 +203,6 @@
 // let sumPrice = dummyData.reduce((sum, ele) => sum + ele.price, 0);
 // console.log(sumPrice);
 
-// let scnNnum = [2, 3, 4, 11, 55, 32, 22, 10, 62];
-// function secLar(arr) {
-//   arr.sort((a, b) => a - b).pop();
-//   return Math.max(...arr);
-// }
-// console.log(secLar(num));
-
 // // Find longest word
 // function findlongest(str) {
 //   let words = str.split(" ").sort((a, b) => b.length - a.length);
@@ -234,15 +239,18 @@
 
 // //Appear times
 // let arr = [2, 1, 3, 2, 4, 5, 6, 3, 6, 2, 2];
-// let obj = {};
-// for (let i = 0; i < arr.length; i++) {
-//   if (!obj[arr[i]]) {
-//     obj[arr[i]] = 1;
-//   } else {
-//     obj[arr[i]]++;
-//   }
+// function apper(arr){
+//     let obj = {};
+//     for (let i = 0; i < arr.length; i++) {
+//       if (!obj[arr[i]]) {
+//         obj[arr[i]] = 1;
+//       } else {
+//         obj[arr[i]]++;
+//       }
+//     }
+//     return obj;
 // }
-// console.log(obj);
+// console.log(apper(arr));
 
 // // Apper times
 // const numbers = [1, 2, 3, 1, 2, 4, 2, 5, 3, 2];
@@ -305,6 +313,36 @@
 // }
 // console.log(rev("ros hani"));
 
+
+// function rev(str){
+//     let reversedStr = str
+//       .split(" ")
+//       .map((word) => word.split("").reverse().join(""))
+//       .join(" ");
+//       return reversedStr;
+// }
+// console.log(rev("ros hani"));
+
+// // Call, Apply And Bind === these method allow an object to use the method(function) of another object.
+// let person1 = {
+//     name: "ros",
+//     lname: "chau",
+//     fullName: function (town){
+//         return this.name + " " + this.lname + " " + town;
+//     }
+// }
+
+// let person2 = {
+//     name: "shani",
+//     lname: "siya"
+// }
+
+// console.log(person1.fullName.call(person2,"varanasi"));
+// console.log(person1.fullName.apply(person2,["varanasi"]));
+// let result = person1.fullName.bind(person2,"varanasi");
+// console.log(result());
+
+
 // //Callback function
 // function greet(name, callback) {
 //   console.log("Hello! " + name);
@@ -333,37 +371,11 @@
 //     console.log(error + ": Error");
 //   });
 
-// let str = "ros hani";
-// let reversedStr = str
-//   .split(" ")
-//   .map((word) => word.split("").reverse().join(""))
-//   .join(" ");
-// console.log(reversedStr);
-
-// // Call, Apply And Bind === these method allow an object to use the method(function) of another object.
-// let person1 = {
-//     name: "ros",
-//     lname: "chau",
-//     fullName: function (town){
-//         return this.name + " " + this.lname + " " + town;
-//     }
-// }
-
-// let person2 = {
-//     name: "shani",
-//     lname: "siya"
-// }
-
-// console.log(person1.fullName.call(person2,"varanasi"));
-// console.log(person1.fullName.apply(person2,["varanasi"]));
-// let result = person1.fullName.bind(person2,"varanasi");
-// console.log(result());
-
 // //Async and Await
 // async function fetchData() {
 //     try {
 //         let result = await new Promise((resolve, reject) => {
-//             let success = false;
+//             let success = true;
 //             if (success) {
 //                 resolve("successfully done");
 //             } else {
@@ -388,3 +400,237 @@
 // .catch((error) => {
 //     console.error('Error:', error);
 // });
+
+// function square(rows) {
+//     for (let i = 1; i <= rows; i++) {  
+//         let str = " "     
+//         for (let j = 1; j <= i; j++) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+// }
+// square(5);
+
+// function Usquare(n) {
+//     for (let i = 1; i <= n; i++) {  
+//         let str = " "     
+//         for (let j = 1; j <= n-i; j++) {
+//             str += " "
+//         }
+//         for (let k = 1; k <= i; k++) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+// }
+// Usquare(5);
+
+// function pyramid(n) {
+//     for (let i = 1; i <= n; i++) {  
+//         let str = " "     
+//         for (let j = 1; j <= n-i; j++) {
+//             str += " "
+//         }
+//         for (let k = 1; k <= i; k++) {
+//             str += "*"
+//         }
+//         for (let q = 2; q <= i; q++) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+// }
+// pyramid(5);
+
+// function pyramid(n) {
+//     var m = 1;
+//     for (let i = 1; i <= n; i++) {  
+//         let str = " "     
+//         for (let j = 1; j <= n-i; j++) {
+//             str += " "
+//         }
+//         for(let j=1;j<=m;j++){
+//             str += "*"
+//         }        
+//         console.log(str);
+//         m = m+2;
+//     }
+
+// }
+// pyramid(10);
+
+
+// function Tpyramid(n) {
+//     for (let i = 0; i < n; i++) {
+//         let str = " "
+//         for (let j = 1; j <= i; j++) {
+//             str += " "
+//         }
+//         for (let j = 1; j <= n - i; j++) {
+//             str += "*"
+//         }
+//         for (let j = 2; j <= n - i; j++) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+// }
+// Tpyramid(5);
+
+
+// function Bpyramid(n) {
+//     for (let i = 1; i <= n; i++) {
+//         let str = " "
+//         for (let j = 1; j <= n - i; j++) {
+//             str += " "
+//         }
+//         for (let k = 1; k <= i; k++) {
+//             str += "*"
+//         }
+//         for (let q = 2; q <= i; q++) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+//     for (let i = 2; i <= n; i++) {
+//         let str = " ";
+//         for (let k = 1; k <= i - 1; k++) {
+//             str += " "
+//         }
+//         for (let j = n; j >= i; j--) {
+//             str += "*"
+//         }
+//         for (let l = n - 1; l >= i; l--) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+// }
+// Bpyramid(5);
+
+// function Dpyramid(n) {
+//     for (let i = 1; i <= n; i++) {
+//         let str = " ";
+//         for (let k = 1; k <= i - 1; k++) {
+//             str += " "
+//         }
+//         for (let j = n; j >= i; j--) {
+//             str += "*"
+//         }
+//         for (let l = n - 1; l >= i; l--) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+//     for (let i = 2; i <= n; i++) {
+//         let str = " "
+//         for (let j = 1; j <= n - i; j++) {
+//             str += " "
+//         }
+//         for (let k = 1; k <= i; k++) {
+//             str += "*"
+//         }
+//         for (let q = 2; q <= i; q++) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+
+// }
+// Dpyramid(5)
+
+// function halfPyramid(n) {
+//     for (let i = 0; i <= n; i++) {
+//         let str = " ";
+//         for (let j = 1; j <= n - i; j++) {
+//             str += " ";
+//         }
+//         for (let k = 1; k <= i; k++) {
+//             str += "*"
+//         }
+//         for (let l = 2; l <= i; l++) {
+//             str += "*"
+//         }
+//         console.log(str)
+//     }
+// }
+// halfPyramid(5)
+
+// function UhalfPyramid(n) {
+//     for (let i = 0; i <= n; i++) {
+//         let str = " ";
+//         for (let j = 1; j <= i; j++) {
+//             str += " ";
+//         }
+//         for (let k = 1; k <= n - i; k++) {
+//             str += "*"
+//         }
+//         for (let k = 2; k <= n - i; k++) {
+//             str += "*"
+//         }
+//         console.log(str)
+//     }
+// }
+// UhalfPyramid(5)
+
+// function Bpyramid(n) {
+//     for (let i = 0; i <= n; i++) {
+//         let str = " ";
+//         for (let j = 1; j <= n - i; j++) {
+//             str += " ";
+//         }
+//         for (let k = 1; k <= i; k++) {
+//             str += "*"
+//         }
+//         for (let l = 2; l <= i; l++) {
+//             str += "*"
+//         }
+//         console.log(str)
+//     }
+//     for (let i = 1; i <= n; i++) {
+//         let str = " ";
+//         for (let j = 1; j <= i; j++) {
+//             str += " ";
+//         }
+//         for (let k = 1; k <= n - i; k++) {
+//             str += "*"
+//         }
+//         for (let p = 2; p <= n - i; p++) {
+//             str += "*"
+//         }
+//         console.log(str)
+//     }
+// }
+// Bpyramid(5)
+
+// function Dpyramid(n) {
+//     for (let i = 0; i <= n; i++) {
+//         let str = " ";
+//         for (let j = 1; j <= i; j++) {
+//             str += " ";
+//         }
+//         for (let k = 1; k <= n - i; k++) {
+//             str += "*"
+//         }
+//         for (let p = 2; p <= n - i; p++) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+//     for (let i = 2; i <= n; i++) {
+//         let str = " ";
+//         for (let j = 1; j <= n - i; j++) {
+//             str += " ";
+//         }
+//         for (let k = 1; k <= i; k++) {
+//             str += "*";
+//         }
+//         for (let l = 2; l <= i; l++) {
+//             str += "*"
+//         }
+//         console.log(str);
+//     }
+// }
+
+// Dpyramid(5);
