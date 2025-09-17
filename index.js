@@ -634,3 +634,13 @@
 // }
 
 // Dpyramid(5);
+  
+// let a = fetch("https://dummyjson.com/quotes")
+// // let a = fetch('https://dummyjson.com/test')
+// .then(res => res.json())     // convert response to JSON
+// .then(data => {
+//   console.log(data);         // use the API data
+// })
+// .catch(error => {
+//   console.error('Error:', error);  // handle errors
+// });
