@@ -644,3 +644,17 @@
 // .catch(error => {
 //   console.error('Error:', error);  // handle errors
 // });
+
+console.log("1");
+setTimeout(() => {
+  console.log("2");
+  setTimeout(() => {
+    console.log("3");
+  }, 0);
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("4");
+});
+
+console.log("5");
