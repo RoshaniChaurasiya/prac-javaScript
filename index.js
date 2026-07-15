@@ -1,7 +1,7 @@
 // //Find Duplicates
 // const arrNum = [1, 2, 8, 2, 9, 8];
-// const dup = arrNum.filter((ele, i, arr) => arr.indexOf(ele) !== i);
-// console.log(dup);    
+// const dup = arrNum.filter((ele, i) => arrNum.indexOf(ele) !== i);
+// console.log(dup);
 
 // let arr = [1, 2, 4, 5, 3, 6, 3, 2, 5];
 // let arr2 = [1, 4, 3, 2, 6, 88, 9, 3];
@@ -14,7 +14,7 @@
 //     let uniEl = [];
 
 //     for (let i = 0; i < arr.length; i++) {
-//         if (uniEl.indexOf(arr[i]) === -1){
+//         if (!uniEl.includes(arr[i])){
 //             uniEl.push(arr[i]);
 //         }
 //     }
@@ -126,7 +126,7 @@
 // function outer() {
 //   let a = 43;
 //   function inner() {
-//     console.log(a);
+//     console.log(++a);
 //   }
 //   inner();
 // }
@@ -162,13 +162,6 @@
 // }
 
 // console.log(captial("good to know"));
-
-// // Find Duplicate
-// let nArr = [1, 2, 1, 3, 2, 4, 5, 4];
-// function fDup(nArr) {
-//   return nArr.filter((e, i, arr) => arr.indexOf(e) !== i);
-// }
-// console.log(fDup(nArr));
 
 // //Factorial
 // function fact(n) {
@@ -271,20 +264,24 @@
 // };
 // console.log(fibo(10));
 
-// const fiboSeries = (n) => {
-//   const series = [0, 1];
-//   for (let i = 2; i < n; i++) {
-//     series.push(series[i - 1] + series[i - 2]);
-//   }
-//   return series;
-// };
+// function fiboSeries(n){
+//     if(n<=0) return [];
+//     if(n===1) return [0];
+//     if(n===2) return [0,1];
+
+//     let series = [0,1];
+//     for(let i=2;i<n;i++){
+//         series.push(series[i-1]+series[i-2]);
+//     }
+//     return series;
+// }
 // console.log(fiboSeries(10));
 
 // const numRan = (a, b) => {
 //   let arr = [];
 //   while (a <= b) {
 //     arr.push(a);
-//     a++;
+//     a++; 
 //   }
 //   return arr;
 // };
@@ -645,16 +642,94 @@
 //   console.error('Error:', error);  // handle errors
 // });
 
-console.log("1");
-setTimeout(() => {
-  console.log("2");
-  setTimeout(() => {
-    console.log("3");
-  }, 0);
-}, 0);
+// // event loop order (synchronous → microtask → macrotask)
+// console.log("1");  //synchronous
+// setTimeout(() => {
+//   console.log("2"); //macrotask
+//   setTimeout(() => {
+//     console.log("3"); //macrotask
+//   }, 0);
+// }, 0);
 
-Promise.resolve().then(() => {
-  console.log("4");
-});
+// Promise.resolve().then(() => {
+//   console.log("4");  //microtask
+// });
 
-console.log("5");
+// console.log("5"); // synchronous
+
+// import React from 'react';
+// import { useState, useEffect } from 'react';
+
+// function App() {
+//   const [apiData, setapiData] = useState([]);
+  
+//   useEffect(()=>{
+//     fetch("https://dummyjson.com/users")
+//     .then(res=>res.json())
+//     .then((data)=>{setapiData(data.users)})
+//   },[])
+
+//   return (
+//     <div>
+//     {apiData.map((item)=>(
+//     <li key={item.id}>{item.firstName}</li>
+//     )
+//     )}
+//     </div>
+//   )
+// }
+
+// export default App;
+
+// function foundVowel(str){
+//     let vowels = "aeiou";
+//     let count = 0;
+    
+//     for (let char of str) {
+//         if(vowels.includes(char)) count++;
+//     }
+//     return count;
+// }
+
+// console.log(foundVowel("Try programiz"));
+
+// function debounce(fn, delay){
+//   let timer;
+
+//   return function(){
+//     clearTimeout(timer);
+
+//     timer = setTimeout(()=>{
+//       fn();
+//     }, delay);
+//   }
+// }
+
+
+// function rev(sen) {
+//     let words = [];
+//     let word = "";
+
+//     for (let i = 0; i < sen.length; i++) {
+//         if (sen[i] === " ") {
+//             words.push(word);
+//             word = "";
+//         } else {
+//             word += sen[i];
+//         }
+//     }
+
+//     // Push the last word
+//     words.push(word);
+
+//     let re = "";
+
+//     for (let i = words.length - 1; i >= 0; i--) {
+//         re += words[i];
+//         if (i !== 0) re += " ";
+//     }
+
+//     return re;
+// }
+
+// console.log(rev("Start small Ship something"));
